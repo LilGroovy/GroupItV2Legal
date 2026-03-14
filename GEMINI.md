@@ -1,14 +1,14 @@
-# GEMINI.md - Project Context for KlubKlub Legal
+# GEMINI.md - Project Context for Outli Legal
 
-This directory contains the legal and support documentation for the **KlubKlub** mobile application. These are static HTML files designed to be hosted and linked from within the app or on a website.
+This directory contains the legal and support documentation for the **Outli** mobile application. These are static HTML files designed to be hosted and linked from within the app or on a website.
 
 ## Directory Overview
 The project is a **Non-Code Project** consisting of localized and standard legal documents and a support page.
 
-- **App Name:** KlubKlub
+- **App Name:** Outli
 - **Primary Technologies:** HTML5, Vanilla CSS
 - **Owner/Data Controller:** Nikolai Altergott (Wüstenrot, Germany)
-- **Email:** support@klubklub.app / nikolai.altergott.na@gmail.com
+- **Email:** support@outli.live / nikolai.altergott.na@gmail.com
 
 ## Key Architectural Points (Current)
 - **Core Entity:** The app has transitioned from "Groups/Klubs" to **Activities**. Users create Activities, and others request to join them.
