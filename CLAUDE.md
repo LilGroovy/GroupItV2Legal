@@ -1,0 +1,57 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+One unified site at `outli.live` (GitHub Pages, CNAME). The marketing homepage is the entry point; legal and support pages are integrated sub-pages.
+
+## Tech Stack
+
+- Vanilla HTML5 + CSS + minimal JS only
+- No UI frameworks, no Tailwind, no build step, no package manager
+- Mobile-first responsive design
+- No analytics/tracking scripts
+- Prefer CSS for behavior (`scroll-behavior: smooth`) over JS where possible
+- Deploy: `git push` to `main` → GitHub Pages live instantly
+
+## File Structure
+
+- `index.html` — Marketing homepage (entry point)
+- `privacy.html` — Privacy Policy (GDPR-compliant, renamed from `index.html`)
+- `termsofuse.html` — Terms of Use
+- `support.html` — Support page with FAQ
+- `styles.css` — Shared stylesheet (common styles extracted from inline `<style>` blocks)
+- `outli_homepage_build_brief.md` — Spec for the marketing homepage
+
+## Architecture & Conventions
+
+- Shared styles live in `styles.css`, linked from all pages
+- Page-specific styles can live in `<style>` tags within each file
+- Legal page navbar includes a "Home" link to `index.html`
+- Homepage footer links to `privacy.html` (not `index.html`)
+- When updating legal content, keep the `Last updated:` date at the top of the file in sync
+- All pages share the same iOS-inspired aesthetic (`-apple-system` font stack, `#007aff` link color)
+- Note: CNAME must be updated from `legal.outli.live` → `outli.live` when going live
+
+## App Context
+
+**Outli** is a location-based iOS social app for students. Key data points relevant to the legal pages:
+- Auth: Sign in with Apple only
+- Backend: Google Firebase (auth, database, analytics) + Google Places
+- Data collected: Name, Email, Date of Birth, Gender, Profile Picture, location (at sign-in only)
+- Public visibility: Name, Age, Gender, Profile Picture shown to other activity participants
+- Core entity: **Activities** (users create activities; others request to join)
+- Minimum age: 13 (Germany digital consent age: 16)
+- Data Controller: Nikolai Altergott, Lange Äcker 1, 71543 Wüstenrot, Deutschland
+- Contact: support@outli.live
+
+## Marketing Homepage Spec
+
+See `outli_homepage_build_brief.md` for full details. Key constraints:
+- Single HTML file, no frameworks, no build step
+- Mobile-first (majority of visitors on iPhone/Android)
+- No analytics/tracking scripts
+- Must be live before April 1, 2026 (TU Berlin orientation deadline)
+- Sections: Hero, How It Works, The Feeling, For Partners/Orgs, Footer
+- Partner contact: hello@outli.live

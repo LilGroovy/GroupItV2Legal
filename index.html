@@ -3,724 +3,638 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Outli Privacy Policy</title>
-
+    <link rel="icon" href="Assets/App Icon Template-2.png" type="image/png" />
+    <link rel="apple-touch-icon" href="Assets/App Icon Template-2.png" />
+    <title>Outli — Get Out. Live.</title>
+    <meta
+      name="description"
+      content="Outli shows you what's happening around you — and who's going. Meet people, do things, stop waiting."
+    />
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
+        margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif;
+        background: #fffcf2;
+        color: #1a1a1a;
         line-height: 1.6;
-        padding: 24px;
-        margin: 0;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        color: #333;
-      }
-      h1,
-      h2,
-      h3 {
-        line-height: 1.2;
-      }
-      h2 {
-        margin-top: 2em;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-      }
-      h3 {
-        margin-top: 1.5em;
-      }
-      ul {
-        padding-left: 20px;
-      }
-      li p {
-        margin-left: 10px;
-      }
-      a {
-        color: #007aff; /* Standard iOS blue link color */
-      }
-      .related-links {
-        margin-top: 1.5em;
-        margin-bottom: 2em;
-        padding-bottom: 1em;
-        border-bottom: 1px solid #eee; /* Adds a separator line */
-      }
-      .related-links h3 {
-        margin-top: 0;
-        margin-bottom: 0.5em;
-        font-size: 1.1em; /* Slightly smaller heading */
       }
 
-      /* --- NEW NAVBAR STYLES --- */
-      .navbar {
-        padding-bottom: 15px;
-        margin-bottom: 24px;
-        border-bottom: 1px solid #eee; /* Matches your other borders */
+      /* NAV */
+      .site-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        background: rgba(255, 252, 242, 0.88);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 100;
       }
-      .navbar ul {
-        list-style: none; /* Removes bullets */
-        padding: 0;
-        margin: 0;
-        text-align: center; /* Centers the links */
-      }
-      .navbar li {
-        display: inline-block; /* Makes links horizontal */
-        margin: 0 15px; /* Adds spacing between links */
-      }
-      .navbar a {
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         text-decoration: none;
-        color: #555; /* Standard nav color */
+        color: #1a1a1a;
+      }
+      .nav-logo img {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+      }
+      .nav-logo-name {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .nav-cta {
+        background: #ffb600;
+        color: #1a1a1a;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 8px 18px;
+        border-radius: 50px;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 24px 64px;
+      }
+      .hero-logo {
+        margin-bottom: 40px;
+      }
+      .hero-logo img {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+      }
+      .hero-headline {
+        font-size: clamp(1.75rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        color: #1a1a1a;
+        max-width: 560px;
+        margin: 0;
+      }
+      .hero-divider {
+        width: 32px;
+        height: 3px;
+        background: #ffb600;
+        border-radius: 2px;
+        margin: 28px auto;
+      }
+      .hero-bridge {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        font-weight: 600;
+        color: #ffb600;
+        max-width: 480px;
+        margin: 0;
+      }
+      .hero-sub {
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+        font-weight: 400;
+        line-height: 1.65;
+        color: #1a1a1a;
+        max-width: 480px;
+        margin: 0 0 40px;
+      }
+      .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .btn-appstore {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #ffb600;
+        color: #1a1a1a;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 50px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn-appstore:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(255, 182, 0, 0.4);
+      }
+      .btn-learn {
+        color: #888;
+        font-size: 0.9rem;
+        text-decoration: none;
+      }
+      .btn-learn:hover {
+        color: #1a1a1a;
+      }
+
+      /* SECTIONS */
+      .section {
+        padding: 88px 24px;
+      }
+      .section-inner {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      .section-title {
+        font-size: clamp(1.6rem, 4vw, 2.25rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin: 0 0 48px;
+        text-align: center;
+      }
+
+      /* HOW IT WORKS */
+      #how-it-works {
+        border-top: 1px solid #ede8d8;
+      }
+      #how-it-works .section-inner {
+        max-width: 900px;
+      }
+      .how-it-works-layout {
+        display: flex;
+        gap: 48px;
+        align-items: flex-start;
+      }
+      .step-tabs {
+        flex: 0 0 44%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .step-tab {
+        padding: 16px 20px;
+        border-left: 3px solid transparent;
+        cursor: pointer;
+        border-radius: 0 8px 8px 0;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+      .step-tab:hover {
+        background: rgba(255, 182, 0, 0.06);
+      }
+      .step-tab.active {
+        border-left-color: #ffb600;
+        background: rgba(255, 182, 0, 0.08);
+      }
+      .step-tab-num {
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: #ffb600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+      }
+      .step-tab-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #aaa;
+        margin: 0 0 4px;
+        transition: color 0.2s ease;
+      }
+      .step-tab.active .step-tab-title {
+        color: #1a1a1a;
+      }
+      .step-tab-desc {
+        font-size: 0.875rem;
+        color: #888;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .mockup-panel {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 520px;
+        position: relative;
+      }
+      .mockup-img {
+        position: absolute;
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        pointer-events: none;
+      }
+      .mockup-img.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .mobile-step-desc {
+        display: none;
+      }
+      @media (max-width: 640px) {
+        .how-it-works-layout {
+          flex-direction: column;
+          gap: 24px;
+        }
+        .step-tabs {
+          flex: none;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+        }
+        .step-tab {
+          border-left: none;
+          border-bottom: 2px solid transparent;
+          border-radius: 8px;
+          padding: 12px 14px;
+          background: rgba(0, 0, 0, 0.03);
+        }
+        .step-tab.active {
+          border-bottom-color: #ffb600;
+          background: rgba(255, 182, 0, 0.08);
+        }
+        .step-tab-desc {
+          display: none;
+        }
+        .mobile-step-desc {
+          display: block;
+          font-size: 0.875rem;
+          color: #666;
+          line-height: 1.5;
+          margin: 0;
+          text-align: center;
+        }
+        .mockup-panel {
+          width: 100%;
+          min-height: 400px;
+        }
+        .mockup-img {
+          max-width: 240px;
+        }
+      }
+
+      /* THE FEELING */
+      #the-feeling {
+        background: #fff7e0;
+        border-top: 1px solid #ede8d8;
+        border-bottom: 1px solid #ede8d8;
+      }
+      .feeling-text {
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        color: #444;
+        line-height: 1.8;
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* CTA */
+      #cta {
+        background: #ffb600;
+        padding: 96px 24px;
+        text-align: center;
+      }
+      #cta .section-inner {
+        max-width: 600px;
+      }
+      .cta-prompt {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
         font-weight: 500;
+        color: rgba(61, 48, 0, 0.6);
+        margin: 0 0 10px;
       }
-      .navbar a:hover {
-        color: #007aff; /* Uses your existing link color on hover */
+      .activity-display {
+        font-size: clamp(2rem, 6vw, 3.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        color: #1a1a1a;
+        margin: 0 0 48px;
+        min-height: 1.2em;
       }
-      /* Style for the *current* page's link */
-      .navbar a.active {
-        color: #333; /* Makes it dark, like body text */
-        font-weight: 700; /* Bolder */
+      .activity-word {
+        display: inline;
       }
-      /* --- END NEW STYLES --- */
+      .activity-word.exit {
+        animation: actExit 0.25s ease forwards;
+      }
+      .activity-word.enter {
+        animation: actEnter 0.25s ease forwards;
+      }
+      @keyframes actExit {
+        to { opacity: 0; transform: translateY(-12px); }
+      }
+      @keyframes actEnter {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .activity-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 0.8em;
+        background: #1a1a1a;
+        margin-left: 3px;
+        vertical-align: middle;
+        border-radius: 1px;
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cta-bridge {
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+        color: #3d3000;
+        margin: 0 0 36px;
+        line-height: 1.6;
+      }
+      .btn-dark {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #1a1a1a;
+        color: #fffcf2;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 50px;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+      .btn-dark:hover {
+        transform: translateY(-2px);
+        opacity: 0.85;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 48px 24px;
+        text-align: center;
+      }
+      .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: #1a1a1a;
+      }
+      .footer-logo img {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+      }
+      .footer-logo span {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+        margin-bottom: 20px;
+        font-size: 0.875rem;
+      }
+      .footer-links a {
+        color: #777;
+        text-decoration: none;
+      }
+      .footer-links a:hover {
+        color: #1a1a1a;
+      }
+      .footer-byline {
+        font-size: 0.8rem;
+        color: #bbb;
+        margin: 0;
+      }
     </style>
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
-        <li>
-          <a href="index.html" class="active">Privacy Policy</a>
-        </li>
-        <li><a href="termsofuse.html">Terms of Use</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
+    <!-- NAV -->
+    <nav class="site-nav">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/App Icon Template-2.png" alt="Outli" />
+        <span class="nav-logo-name">Outli</span>
+      </a>
+      <a href="#" class="nav-cta">Download</a>
     </nav>
-    <h1>Outli Privacy Policy</h1>
-    <p>Last updated: March 14, 2026</p>
-    <p>
-      This Privacy Policy describes Our policies and procedures on the
-      collection, use and disclosure of Your information when You use the
-      Service and tells You about Your privacy rights and how the law protects
-      You.
-    </p>
-    <p>
-      We use Your Personal data to provide and improve the Service. By using the
-      Service, You agree to the collection and use of information in accordance
-      with this Privacy Policy.
-    </p>
-    <div class="related-links">
-      <h3>Related Documents</h3>
-      <p>
-        Your use of our Service is also governed by our
-        <a href="termsofuse.html">Terms of Use</a>. Please review them
-        carefully.
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-logo">
+        <img src="Assets/App Icon Template-2.png" alt="Outli logo" />
+      </div>
+      <h1 class="hero-headline">
+        New City. So much to experience.<br />But don't know anyone?<br />So you
+        scroll.
+      </h1>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <p class="hero-bridge">
+        Turns out the city is full of people who want to do the same thing.
       </p>
-    </div>
-    <h2>Information for Users in the European Economic Area (EEA)</h2>
-    <p>
-      This Privacy Policy is prepared in compliance with the EU General Data
-      Protection Regulation (GDPR).
-    </p>
-    <h3>Data Controller</h3>
-    <p>
-      For the purposes of the GDPR, the "Data Controller" (the legal entity
-      responsible for your data) is:
-    </p>
-    <p>
-      <strong>Nikolai Altergott</strong><br />
-      <strong>Lange Äcker 1, 71543 Wüstenrot, Deutschland</strong><br />
-      <strong>Email:</strong> support@outli.live
-    </p>
-
-    <h3>Right to Lodge a Complaint</h3>
-    <p>
-      You have the right to lodge a complaint with a data protection supervisory
-      authority. For users in Berlin, the relevant authority is the "Berliner
-      Beauftragte für Datenschutz und Informationsfreiheit".
-    </p>
-
-    <h2>Interpretation and Definitions</h2>
-    <h3>Interpretation</h3>
-    <p>
-      The words whose initial letters are capitalized have meanings defined
-      under the following conditions. The following definitions shall have the
-      same meaning regardless of whether they appear in singular or in plural.
-    </p>
-    <h3>Definitions</h3>
-    <p>For the purposes of this Privacy Policy:</p>
-    <ul>
-      <li>
-        <p>
-          <strong>Account</strong> means a unique account created for You to
-          access our Service or parts of our Service.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Affiliate</strong> means an entity that controls, is
-          controlled by, or is under common control with a party, where
-          &quot;control&quot; means ownership of 50% or more of the shares,
-          equity interest or other securities entitled to vote for election of
-          directors or other managing authority.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Application</strong> refers to Outli, the software program
-          provided by the Company.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Company</strong> (referred to as either &quot;the
-          Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-          this Agreement) refers to <strong>Nikolai Altergott</strong>.
-        </p>
-      </li>
-      <li>
-        <p><strong>Country</strong> refers to: Berlin, Germany</p>
-      </li>
-      <li>
-        <p>
-          <strong>Data Controller</strong>, for the purposes of the GDPR, refers
-          to the Company as the legal person which alone or jointly with others
-          determines the purposes and means of the processing of Personal Data.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Device</strong> means any device that can access the Service
-          such as a computer, a cell phone or a digital tablet.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>GDPR</strong> refers to the EU General Data Protection
-          Regulation.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Personal Data</strong> is any information that relates to an
-          identified or identifiable individual.
-        </p>
-      </li>
-      <li>
-        <p><strong>Service</strong> refers to the Application.</p>
-      </li>
-      <li>
-        <p>
-          <strong>Service Provider</strong> means any natural or legal person
-          who processes the data on behalf of the Company. It refers to
-          third-party companies or individuals employed by the Company to
-          facilitate the Service, to provide the Service on behalf of the
-          Company, to perform services related to the Service or to assist the
-          Company in analyzing how the Service is used.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>Usage Data</strong> refers to data collected automatically,
-          either generated by the use of the Service or from the Service
-          infrastructure itself (for example, the duration of a page visit).
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>You</strong> means the individual accessing or using the
-          Service, or the company, or other legal entity on behalf of which such
-          individual is accessing or using the Service, as applicable.
-        </p>
-      </li>
-    </ul>
-    <h2>Collecting and Using Your Personal Data</h2>
-    <h3>Types of Data Collected</h3>
-    <h4>Personal Data</h4>
-    <p>
-      While using Our Service, We may ask You to provide Us with certain
-      personally identifiable information that can be used to contact or
-      identify You. Personally identifiable information may include, but is not
-      limited to:
-    </p>
-    <ul>
-      <li>
-        <p>Email address</p>
-      </li>
-      <li>
-        <p>Name</p>
-      </li>
-      <li>
-        <p>
-          Date of Birth (for age verification and displaying age to other users)
-        </p>
-      </li>
-      <li>
-        <p>Gender</p>
-      </li>
-      <li>
-        <p>Profile Picture</p>
-      </li>
-      <li>
-        <p>Your location (collected at sign-in to show nearby Activities)</p>
-      </li>
-      <li>
-        <p>Usage Data</p>
-      </li>
-    </ul>
-
-    <h4>Content You Provide (Personal Data)</h4>
-    <p>
-      As the core function of the Service, We also collect and store the content
-      You generate. This includes:
-    </p>
-    <ul>
-      <li>
-        <p>
-          Names, Images, descriptions, and locations of Activities You create
-        </p>
-      </li>
-      <li>
-        <p>Activity details You post (text description, date, and location)</p>
-      </li>
-      <li>
-        <p>
-          Your requests to join Activities and your responses to join requests
-          (e.g., "Accept" or "Decline")
-        </p>
-      </li>
-    </ul>
-
-    <h4>Usage Data</h4>
-    <p>Usage Data is collected automatically when using the Service.</p>
-    <p>
-      Usage Data may include information such as Your Device's Internet Protocol
-      address (e.g. IP address), browser type, browser version, the pages of our
-      Service that You visit, the time and date of Your visit, the time spent on
-      those pages, unique device identifiers and other diagnostic data.
-    </p>
-    <p>
-      When You access the Service by or through a mobile device, We may collect
-      certain information automatically, including, but not limited to, the type
-      of mobile device You use, Your mobile device's unique ID, the IP address
-      of Your mobile device, Your mobile operating system, the type of mobile
-      Internet browser You use, unique device identifiers and other diagnostic
-      data.
-    </p>
-    <p>
-      We may also collect information that Your browser sends whenever You visit
-      Our Service or when You access the Service by or through a mobile device.
-    </p>
-    <h4>Information Collected while Using the Application</h4>
-    <p>
-      While using Our Application, in order to provide features of Our
-      Application, We may collect, with Your prior permission:
-    </p>
-    <ul>
-      <li>
-        <p>
-          Information regarding your location. We collect your location
-          information at sign-in (not live tracking) to search for Activities
-          near you and to set Activity locations.
-        </p>
-      </li>
-      <li>
-        <p>
-          Pictures and other information from your Device's camera and photo
-          library (to allow You to set a profile picture or Activity picture)
-        </p>
-      </li>
-    </ul>
-    <p>
-      We use this information to provide features of Our Service, to improve and
-      customize Our Service. The information may be uploaded to the Company's
-      servers and/or a Service Provider's server or it may be simply stored on
-      Your device.
-    </p>
-    <p>
-      You can enable or disable access to this information at any time, through
-      Your Device settings.
-    </p>
-
-    <h3>Legal Basis and Use of Your Personal Data</h3>
-    <p>
-      The Company processes Your Personal Data based on the following legal
-      bases under GDPR:
-    </p>
-    <p>
-      <strong
-        >1. For the Performance of our Contract with You (Art. 6(1)(b)
-        GDPR):</strong
-      >
-      We process your data to provide the Service you signed up for, as
-      described in our Terms of Use. This includes:
-    </p>
-    <ul>
-      <li>
-        <p>
-          <strong>To provide and maintain our Service</strong>, including to
-          monitor the usage of our Service.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>To manage Your Account:</strong> to manage Your registration
-          as a user of the Service. The Personal Data You provide can give You
-          access to different functionalities of the Service that are available
-          to You as a registered user.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>To enable Service functionality:</strong> To display Your
-          profile (name, age, gender, and profile picture), created Activities,
-          and Activity details to other users. Your join requests and responses
-          (Accept/Decline) will be visible to the relevant participants of that
-          specific Activity.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>To contact You:</strong> To contact You by email or other
-          equivalent forms of electronic communication, such as a mobile
-          application's push notifications regarding updates or informative
-          communications related to the functionalities, products or contracted
-          services, including the security updates, when necessary or reasonable
-          for their implementation.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>To manage Your requests:</strong> To attend and manage Your
-          requests to Us (such as support or data access requests).
-        </p>
-      </li>
-    </ul>
-
-    <p>
-      <strong>2. For our Legitimate Interests (Art. 6(1)(f) GDPR):</strong> We
-      may process your data when it is in our legitimate interest to do so and
-      when these interests are not overridden by your data protection rights.
-      This includes:
-    </p>
-    <ul>
-      <li>
-        <p>
-          <strong>For business transfers:</strong> We may use Your information
-          to evaluate or conduct a merger, divestiture, restructuring,
-          reorganization, dissolution, or other sale or transfer of some or all
-          of Our assets, in which Personal Data held by Us about our Service
-          users is among the assets transferred.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>For other purposes</strong>: We may use Your information for
-          other purposes, such as data analysis, identifying usage trends, and
-          to evaluate and improve our Service, products, services, marketing and
-          your experience.
-        </p>
-      </li>
-    </ul>
-
-    <p>
-      <strong>3. With Your Consent (Art. 6(1)(a) GDPR):</strong> We will ask for
-      your consent to process your data for the following purposes:
-    </p>
-    <ul>
-      <li>
-        <p>
-          <strong>To provide You</strong> with news, special offers, and general
-          information about other goods, services and events which We offer. You
-          may opt out of receiving any, or all, of these communications from Us
-          at any time.
-        </p>
-      </li>
-    </ul>
-
-    <p>
-      <strong>4. To Comply with a Legal Obligation (Art. 6(1)(c) GDPR):</strong>
-    </p>
-    <ul>
-      <li>
-        We may process your data to comply with our legal obligations (for
-        example, if we are required to retain your data to comply with
-        applicable laws) or in response to valid requests by public authorities
-        (e.g., a court or a government agency).
-      </li>
-    </ul>
-
-    <p>We may share Your personal information in the following situations:</p>
-    <ul>
-      <li>
-        <strong>With Service Providers:</strong> We may share Your personal
-        information with Service Providers to monitor and analyze the use of our
-        Service, to contact You.
-      </li>
-      <li>
-        <strong>For business transfers:</strong> We may share or transfer Your
-        personal information in connection with, or during negotiations of, any
-        merger, sale of Company assets, financing, or acquisition of all or a
-        portion of Our business to another company.
-      </li>
-      <li>
-        <strong>With Affiliates:</strong> We may share Your information with Our
-        affiliates, in which case we will require those affiliates to honor this
-        Privacy Policy. Affiliates include Our parent company and any other
-        subsidiaries, joint venture partners or other companies that We control
-        or that are under common control with Us.
-      </li>
-      <li>
-        <strong>With business partners:</strong> We may share Your information
-        with Our business partners to offer You certain products, services or
-        promotions.
-      </li>
-      <li>
-        <strong>With other users:</strong> Your profile information (name, age,
-        gender, and profile picture) and the Activities You create may be
-        visible to all users of the Service. Information You post within an
-        Activity, such as details and your responses (Accept/Decline), will be
-        visible to all other members of that specific Activity.
-      </li>
-      <li>
-        <strong>With Your consent</strong>: We may disclose Your personal
-        information for any other purpose with Your consent.
-      </li>
-    </ul>
-    <h3>Retention of Your Personal Data</h3>
-
-    <p>
-      The Company will retain Your Personal Data only for as long as is
-      necessary for the purposes set out in this Privacy Policy. We will retain
-      and use Your Personal Data to the extent necessary to comply with our
-      legal obligations (for example, if we are required to retain your data to
-      comply with applicable laws), resolve disputes, and enforce our legal
-      agreements and policies.
-    </p>
-    <p>
-      The Company will also retain Usage Data for internal analysis purposes.
-      Usage Data is generally retained for a shorter period of time, except when
-      this data is used to strengthen the security or to improve the
-      functionality of Our Service, or We are legally obligated to retain this
-      data for longer periods.
-    </p>
-    <h3>Transfer of Your Personal Data</h3>
-    <p>
-      Your information, including Personal Data, is processed at the Company's
-      operating offices and in any other places where the parties involved in
-      the processing are located.
-    </p>
-    <p>
-      We use third-party Service Providers (such as Google Firebase and Google
-      Places) located in the United States. This means that Your information may
-      be transferred to — and maintained on — computers located outside of Your
-      state, province, country or other governmental jurisdiction where the data
-      protection laws may differ from those from Your jurisdiction.
-    </p>
-    <p>
-      When We transfer Your Personal Data to countries outside the European
-      Economic Area (EEA), We will take all steps reasonably necessary to ensure
-      that Your data is treated securely and in accordance with this Privacy
-      Policy by relying on an adequate legal transfer mechanism, such as the
-      EU-U.S. Data Privacy Framework or the European Commission's Standard
-      Contractual Clauses.
-    </p>
-
-    <h2>Your Data Protection Rights under GDPR</h2>
-    <p>
-      The Company undertakes to respect the confidentiality of Your Personal
-      Data and to guarantee You can exercise Your rights. If You are within the
-      EEA, You have the following rights:
-    </p>
-    <ul>
-      <li>
-        <strong>The right to access.</strong> You have the right to request
-        copies of Your personal data.
-      </li>
-      <li>
-        <strong>The right to rectification.</strong> You have the right to
-        request that We correct any information You believe is inaccurate or
-        complete any information You believe is incomplete.
-      </li>
-      <li>
-        <strong>The right to erasure ("right to be forgotten").</strong> You
-        have the right to request that We erase Your personal data, under
-        certain
-      </li>
-      <li>
-        <strong>The right to restriction of processing.</strong> You have the
-        right to request that We restrict the processing of Your personal data,
-        under certain conditions.
-      </li>
-      <li>
-        <strong>The right to object to processing.</strong> You have the right
-        to object to Our processing of Your personal data, under certain
-        conditions.
-      </li>
-      <li>
-        <strong>The right to data portability.</strong> You have the right to
-        request that We transfer the data that We have collected to another
-        organization, or directly to You, under certain conditions.
-      </li>
-    </ul>
-    <h3>Exercising Your GDPR Rights</h3>
-    <p>
-      You may exercise Your rights of access, rectification, erasure, and
-      objection by contacting Us. You may also update, amend, or delete Your
-      information at any time by signing in to Your Account, if you have one,
-      and visiting the account settings section or contacting us at the provided
-      email address.
-    </p>
-    <p>
-      Please note that We may need to retain certain information when we have a
-      legal obligation or lawful basis to do so, and We may ask You to verify
-      Your identity before responding to such requests.
-    </p>
-
-    <h2>Disclosure of Your Personal Data</h2>
-    <h4>Business Transactions</h4>
-    <p>
-      If the Company is involved in a merger, acquisition or asset sale, Your
-      Personal Data may be transferred. We will provide notice before Your
-      Personal Data is transferred and becomes subject to a different Privacy
-      Policy.
-    </p>
-    <h4>Law enforcement</h4>
-    <p>
-      Under certain circumstances, the Company may be required to disclose Your
-      Personal Data if required to do so by law or in response to valid requests
-      by public authorities (e.g. a court or a government agency).
-    </p>
-    <h4>Other legal requirements</h4>
-    <p>
-      The Company may disclose Your Personal Data in the good faith belief that
-      such action is necessary to:
-    </p>
-    <ul>
-      <li>Comply with a legal obligation</li>
-      <li>Protect and defend the rights or property of the Company</li>
-      <li>
-        Prevent or investigate possible wrongdoing in connection with the
-        Service
-      </li>
-      <li>Protect the personal safety of Users of the Service or the public</li>
-      <li>Protect against legal liability</li>
-    </ul>
-    <h3>Security of Your Personal Data</h3>
-    <p>
-      The security of Your Personal Data is important to Us, but remember that
-      no method of transmission over the Internet, or method of electronic
-      storage is 100% secure. While We strive to use commercially reasonable
-      means to protect Your Personal Data, We cannot guarantee its absolute
-      security.
-    </p>
-    <h2>Detailed Information on the Processing of Your Personal Data</h2>
-    <p>
-      The Service Providers We use may have access to Your Personal Data. These
-      third-party vendors collect, store, use, process and transfer information
-      about Your activity on Our Service in accordance with their Privacy
-      Policies.
-    </p>
-    <h3>Backend and Analytics</h3>
-    <p>
-      We may use third-party Service Providers to provide the backend for and to
-      improve our Service.
-    </p>
-    <ul>
-      <li>
-        <p><strong>Firebase (from Google)</strong></p>
-        <p>
-          Firebase is a backend platform provided by Google. We use Firebase for
-          core functionalities including user authentication (managing your
-          account via email or "Sign in with Apple"), database storage (storing
-          your profile and Activities), and for internal analytics.
-        </p>
-        <p>
-          The information gathered by Firebase is held in accordance with the
-          Privacy Policy of Google:
-          <a
-            href="https://www.google.com/intl/en/policies/privacy/"
-            rel="external nofollow noopener"
-            target="_blank"
-            >https://www.google.com/intl/en/policies/privacy/</a
+      <div class="hero-divider" aria-hidden="true"></div>
+      <p class="hero-sub">
+        Simply say what you'd like to do and explore activities — from coffee to
+        cinema — around you on Outli.
+      </p>
+      <div class="cta-group">
+        <a href="#" class="btn-appstore">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
           >
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"
+            />
+          </svg>
+          Download on the App Store
+        </a>
+        <a href="#how-it-works" class="btn-learn">Learn more ↓</a>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+      <div class="section-inner">
+        <h2 class="section-title">It's simple</h2>
+        <div class="how-it-works-layout">
+          <div class="step-tabs">
+            <div class="step-tab active" data-step="0">
+              <div class="step-tab-num">01</div>
+              <div class="step-tab-title">I want to...</div>
+              <p class="step-tab-desc">Sign up and finish the sentence. Tell Outli what you're up for — coffee, football, museum, anything.</p>
+            </div>
+            <div class="step-tab" data-step="1">
+              <div class="step-tab-num">02</div>
+              <div class="step-tab-title">Join &amp; accept</div>
+              <p class="step-tab-desc">Join activities happening around you and accept who joins yours.</p>
+            </div>
+            <div class="step-tab" data-step="2">
+              <div class="step-tab-num">03</div>
+              <div class="step-tab-title">Do what you love</div>
+              <p class="step-tab-desc">Show up. Do the thing. Meet your people. Together.</p>
+            </div>
+            <div class="step-tab" data-step="3">
+              <div class="step-tab-num">04</div>
+              <div class="step-tab-title">Do it again</div>
+              <p class="step-tab-desc">Keep going. Build your social circle, one activity at a time.</p>
+            </div>
+          </div>
+          <p class="mobile-step-desc">Sign up and finish the sentence. Tell Outli what you're up for — coffee, football, museum, anything.</p>
+          <div class="mockup-panel">
+            <img class="mockup-img active" src="Assets/AppMockups/Discover-Post.png" alt="Post what you want to do" />
+            <img class="mockup-img" src="Assets/AppMockups/Discover-Main.png" alt="Explore activities around you" />
+            <img class="mockup-img" src="Assets/AppMockups/Organize-Chat.png" alt="Chat with your group" />
+            <img class="mockup-img" src="Assets/AppMockups/Discover-Detail.png" alt="Join an activity" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FEELING -->
+    <section class="section" id="the-feeling">
+      <div class="section-inner">
+        <h2 class="section-title">
+          For the moments when you want to get out and actually live
+        </h2>
+        <p class="feeling-text">
+          Whether it's exploring a new neighbourhood, finding someone to train
+          with, or just grabbing food with someone — Outli is for the version of
+          you that wants to do something, right now.
         </p>
-      </li>
-      <li>
-        <p><strong>Google Places (from Google)</strong></p>
-        <p>
-          Google Places is a service that returns information about places using
-          HTTP requests, which We use to help you set Activity locations. It is
-          operated by Google.
+        <!-- INSERT FIRST TESTIMONIAL HERE -->
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="section-inner">
+        <p class="cta-prompt">I want to</p>
+        <p class="activity-display">
+          <span class="activity-word">ride a bike</span><span class="activity-cursor" aria-hidden="true"></span>
         </p>
-        <p>
-          The information gathered by Google Places is held in accordance with
-          the Privacy Policy of Google:
-          <a
-            href="https://www.google.com/intl/en/policies/privacy/"
-            rel="external nofollow noopener"
-            target="_blank"
-            >https://www.google.com/intl/en/policies/privacy/</a
-          >
-        </p>
-      </li>
-    </ul>
-    <h2>Children's Privacy</h2>
-    <p>
-      Our Service does not address anyone under the age of 13. We collect Your
-      Date of Birth for the sole purpose of verifying You are 13 years of age or
-      older. We do not knowingly collect personally identifiable information
-      from anyone under the age of 13.
-    </p>
-    <p>
-      If You are a parent or guardian and You are aware that Your child has
-      provided Us with Personal Data, please contact Us. If We become aware that
-      We have collected Personal Data from anyone under the age of 13 without
-      verification of parental consent, We take steps to remove that information
-      from Our servers.
-    </p>
-    <p>
-      If We need to rely on consent as a legal basis for processing Your
-      information and Your country requires consent from a parent (note: the age
-      of digital consent in Germany is 16), We may require Your parent's consent
-      before We collect and use that information.
-    </p>
-    <h2>Links to Other Websites</h2>
-    <p>
-      Our Service may contain links to other websites that are not operated by
-      Us. If You click on a third party link, You will be directed to that third
-      party's site. We strongly advise You to review the Privacy Policy of every
-      site You visit.
-    </p>
-    <p>
-      We have no control over and assume no responsibility for the content,
-      privacy policies or practices of any third party sites or services.
-    </p>
-    <h2>Changes to this Privacy Policy</h2>
-    <p>
-      We may update Our Privacy Policy from time to time. We will notify You of
-      any changes by posting the new Privacy Policy on this page.
-    </p>
-    <p>
-      We will let You know via email and/or a prominent notice on Our Service,
-      prior to the change becoming effective and update the &quot;Last
-      updated&quot; date at the top of this Privacy Policy.
-    </p>
-    <p>
-      You are advised to review this Privacy Policy periodically for any
-      changes. Changes to this Privacy Policy are effective when they are posted
-      on this page.
-    </p>
-    <h2>Contact Us</h2>
-    <p>
-      If you have any questions about this Privacy Policy or wish to exercise
-      your data protection rights, You can contact our Data Controller:
-    </p>
-    <ul>
-      <li>By email: support@outli.live</li>
-      <li>
-        By mail:
-        <strong>Nikolai Altergott</strong>,
-        <strong> Lange Äcker 1, 71543 Wüstenrot, Deutschland</strong>
-      </li>
-    </ul>
+        <p class="cta-bridge">Someone nearby is thinking the exact same thing.</p>
+        <a href="#" class="btn-dark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/>
+          </svg>
+          Download on the App Store
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="index.html" class="footer-logo">
+        <img src="Assets/App Icon Template-2.png" alt="Outli" />
+        <span>Outli</span>
+      </a>
+      <div class="footer-links">
+        <a href="#">Download on App Store</a>
+        <a href="mailto:hello@outli.live">hello@outli.live</a>
+<a href="privacy.html">Privacy Policy</a>
+      </div>
+    </footer>
+    <script>
+      const tabs = document.querySelectorAll(".step-tab");
+      const mockups = document.querySelectorAll(".mockup-img");
+      const mobileDesc = document.querySelector(".mobile-step-desc");
+      const stepDescs = [
+        "Sign up and finish the sentence. Tell Outli what you're up for — coffee, football, museum, anything.",
+        "Join activities happening around you and accept who joins yours.",
+        "Show up. Do the thing. Meet your people. Together.",
+        "Keep going. Build your social circle, one activity at a time.",
+      ];
+      let currentStep = 0;
+      let autoTimer;
+
+      function goToStep(n) {
+        tabs[currentStep].classList.remove("active");
+        mockups[currentStep].classList.remove("active");
+        currentStep = (n + tabs.length) % tabs.length;
+        tabs[currentStep].classList.add("active");
+        mockups[currentStep].classList.add("active");
+        mobileDesc.textContent = stepDescs[currentStep];
+      }
+
+      function resetTimer() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goToStep(currentStep + 1), 3500);
+      }
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => {
+          goToStep(i);
+          resetTimer();
+        });
+      });
+
+      resetTimer();
+
+      // Activity cycling
+      const activities = [
+        "ride a bike",
+        "sample cheese",
+        "go to the club",
+        "play chess",
+        "discuss philosophy over coffee",
+        "try ramen",
+        "explore street art",
+        "play tennis",
+        "visit a museum",
+        "join a quiz night",
+        "go wine tasting",
+        "try bouldering",
+        "watch the sunset",
+        "find a hidden café",
+        "play ping pong",
+        "go to a comedy show",
+        "do a food tour",
+        "see live jazz",
+        "explore a flea market",
+        "try an escape room",
+        "do yoga in the park",
+        "go paddle boarding",
+        "take a photography walk",
+        "play volleyball",
+      ];
+      let actIdx = 0;
+      const actWord = document.querySelector(".activity-word");
+
+      function cycleActivity() {
+        actWord.classList.add("exit");
+        setTimeout(() => {
+          actIdx = (actIdx + 1) % activities.length;
+          actWord.textContent = activities[actIdx];
+          actWord.classList.remove("exit");
+          actWord.classList.add("enter");
+          setTimeout(() => actWord.classList.remove("enter"), 250);
+        }, 250);
+      }
+
+      setInterval(cycleActivity, 2500);
+    </script>
   </body>
 </html>
